@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My map application </title>
+</head>
+<link rel="stylesheet"  href="css/bootstrap.min.css">
+<link rel="stylesheet"  href="css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div class="container">
+      
+                    <button id="menu"> <img id="imgsize" src="https://openclipart.org/image/2400px/svg_to_png/221605/menu-icon.png"></button>
+    <div class="row">
+
+      <div class="options-box col-md-3">
+        <h1 >Rondebosch points of interest</h1>
+        <div>
+          <p>
+            Restuarant type:
+            <select data-bind="options: restaurantCategories, value:chosenCategory"></select>
+          </p>
+          <input id="show-listings" type="button" value="Show markers">
+          <input id="hide-listings" type="button" value="Hide markers">
+          <ul data-bind="foreach: filteredItems" >
+            <li data-bind= "click:$parent.openInfo">
+                <span data-bind="text: title"> </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <div class="col-md-9" id="map">
+
+  </div>
+</div>
+
+
+
+<script src="js/knockout-3.4.2.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_sVLSg_6HaVm1kqfrQsvhsJ8Rw6jYQLo&v=3&callback=initMap">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#menu").click(function(){
+    $(".options-box").toggle();
+      });
+});
+</script>
+</body>
+</html>
+
+
+ ,
