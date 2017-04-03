@@ -276,6 +276,9 @@ function viewModel(){
     });
 }
 ko.applyBindings(new viewModel());
+function toggle(){
+    	 $(".options-box").toggle();
+    }
 
 // Function that uses the foursquare api to return an ajax request with the name , rating and picture of a restuarant 
 function fourSquareInfo(marker){
